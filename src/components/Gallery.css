@@ -1,0 +1,144 @@
+.gallery {
+  padding: 8rem 2rem;
+  background: var(--dark-bg);
+  position: relative;
+  overflow: hidden;
+}
+
+.gallery::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.1) 0%, transparent 70%);
+  animation: pulse-glow 4s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 0.5;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.1);
+  }
+}
+
+.gallery-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.gallery-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.gallery-swiper-container {
+  padding: 2rem 0;
+}
+
+.gallery-swiper {
+  padding-bottom: 3rem;
+}
+
+.gallery-item {
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden;
+  cursor: pointer;
+  height: 400px;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.1);
+}
+
+.gallery-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 2rem;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+}
+
+.gallery-item:hover .gallery-overlay {
+  transform: translateY(0);
+}
+
+.gallery-overlay h3 {
+  color: var(--accent-silver);
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+/* Customização dos controles do Swiper */
+:global(.swiper-button-next),
+:global(.swiper-button-prev) {
+  color: var(--accent-silver);
+  background: rgba(26, 26, 46, 0.8);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+:global(.swiper-button-next)::after,
+:global(.swiper-button-prev)::after {
+  font-size: 1.5rem;
+}
+
+:global(.swiper-button-next):hover,
+:global(.swiper-button-prev):hover {
+  background: rgba(251, 191, 36, 0.3);
+  box-shadow: 0 0 20px rgba(251, 191, 36, 0.5);
+}
+
+:global(.swiper-pagination-bullet) {
+  background: var(--accent-silver);
+  opacity: 0.5;
+  width: 12px;
+  height: 12px;
+}
+
+:global(.swiper-pagination-bullet-active) {
+  opacity: 1;
+  background: var(--accent-silver);
+}
+
+@media (max-width: 768px) {
+  .gallery {
+    padding: 4rem 1rem;
+  }
+
+  .gallery-item {
+    height: 300px;
+  }
+
+  :global(.swiper-button-next),
+  :global(.swiper-button-prev) {
+    width: 40px;
+    height: 40px;
+  }
+
+  :global(.swiper-button-next)::after,
+  :global(.swiper-button-prev)::after {
+    font-size: 1.2rem;
+  }
+}
