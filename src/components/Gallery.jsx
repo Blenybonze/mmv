@@ -6,7 +6,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import './Gallery.css';
-import capaLivro from '../assets/capa-livro.jpg';
+import capaLivro from '../assets/capa-livro.png';
 import livroAberto from '../assets/MMV ABERTO.png';
 import mockup4 from '../assets/MOCKUP 4.png';
 import marcaPagina from '../assets/MARCA PAGINA MOCKUP (1).png';

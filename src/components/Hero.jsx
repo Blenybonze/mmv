@@ -1,50 +1,14 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, EffectFade, Pagination } from 'swiper/modules';
-import 'swiper/css';
-import 'swiper/css/effect-fade';
-import 'swiper/css/pagination';
+// ...existing code...
 import './Hero.css';
-import capaLivro from '../assets/Screenshot_2024-06-12-19-06-11-188_com.miui.gallery-edit.jpg';
-import livroAberto from '../assets/MMV ABERTO.png';
-import mockup4 from '../assets/MOCKUP 4.png';
+import capaLivro from '../assets/capa-livro.png';
+import backgroundImage from '../assets/Screenshot_2024-06-12-19-06-11-188_com.miui.gallery-edit.jpg';
 
 const Hero = () => {
-  const bookImages = [
-    capaLivro,
-    livroAberto,
-    mockup4,
-  ];
-
   return (
-    <section id="hero" className="hero">
+  <section id="hero" className="hero" style={{ backgroundImage: `url(${backgroundImage})` }}>
       <div className="hero-overlay"></div>
-      
-      <Swiper
-        modules={[Autoplay, EffectFade, Pagination]}
-        effect="fade"
-        autoplay={{
-          delay: 5000,
-          disableOnInteraction: false,
-        }}
-        pagination={{
-          clickable: true,
-          dynamicBullets: true,
-        }}
-        loop={true}
-        className="hero-swiper"
-      >
-        {bookImages.map((image, index) => (
-          <SwiperSlide key={index}>
-            <div 
-              className="hero-slide"
-              style={{ backgroundImage: `url(${image})` }}
-            ></div>
-          </SwiperSlide>
-        ))}
-      </Swiper>
-
       <div className="hero-content">
         <motion.div
           initial={{ opacity: 0, y: 50 }}

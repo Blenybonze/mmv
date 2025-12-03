@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { FaBookOpen, FaMagic, FaDragon, FaCrown } from 'react-icons/fa';
-import capaLivro from '../assets/capa-livro.jpg';
+import capaLivro from '../assets/capa-livro.png';
 import './About.css';
 
 const About = () => {
